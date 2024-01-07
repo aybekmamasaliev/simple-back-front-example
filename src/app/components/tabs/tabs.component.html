@@ -1,0 +1,13 @@
+<div class="radio_btns" >
+  <div *ngFor="let tab of tabs">
+    <input
+      type="radio"
+      class="radio"
+      [value]="tab.value"
+      name="toggleTypes"
+      [formControl]="controll"
+      [id]="tab.id"
+    />
+    <label class="radio-label" [for]="tab.id">{{ tab.name }}</label>
+  </div>
+</div>

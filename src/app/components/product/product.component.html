@@ -1,0 +1,114 @@
+<p *ngIf="loading">Loading ...</p>
+<div class="products-item container my-3">
+  <p>{{ currentProd?.name }}</p>
+  <img [src]="currentProd?.img" alt="img" class="img" />
+  <p>{{ currentProd?.price }}</p>
+  <p>{{ currentProd?.description }}</p>
+  <p>{{ currentProd?.count }}</p>
+  <p>{{ currentProd?.type }}</p>
+  <p>{{ term }}</p>
+  <form [formGroup]="form">
+    <div
+      class="fit_content"
+      [ngClass]="{
+        error:
+          form.get('name')?.invalid &&
+          (form.get('name')?.dirty || form.get('name')?.touched)
+      }"
+    >
+      <label>Name : </label>
+      <input
+        type="text"
+        [placeholder]="currentProd?.name"
+        formControlName="name"
+      />
+    </div>
+    <div
+      class="fit_content"
+      [ngClass]="{
+        error:
+          form.get('price')?.invalid &&
+          (form.get('price')?.dirty || form.get('price')?.touched)
+      }"
+    >
+      <label>Price : </label>
+      <input
+        type="text"
+        [placeholder]="currentProd?.price"
+        formControlName="price"
+      />
+    </div>
+    <div
+      class="fit_content"
+      [ngClass]="{
+        error:
+          form.get('description')?.invalid &&
+          (form.get('description')?.dirty || form.get('description')?.touched)
+      }"
+    >
+      <label>description : </label>
+      <input
+        type="text"
+        [placeholder]="currentProd?.description"
+        formControlName="description"
+      />
+    </div>
+    <div
+      class="fit_content"
+      [ngClass]="{
+        error:
+          form.get('count')?.invalid &&
+          (form.get('count')?.dirty || form.get('count')?.touched)
+      }"
+    >
+      <label>amount : </label>
+      <input
+        type="text"
+        [placeholder]="currentProd?.count"
+        formControlName="count"
+      />
+    </div>
+    <div
+      class="fit_content my-2"
+      [ngClass]="{
+        error:
+          form.get('type')?.invalid &&
+          (form.get('type')?.dirty || form.get('type')?.touched)
+      }"
+    >
+      <label>type : </label>
+      <select formControlName="type">
+        <option value="nrolls">nrolls</option>
+        <option value="pizza">pizza</option>
+        <option value="sushi">sushi</option>
+        <option value="burgers2">burgers2</option>
+        <option value="drinks">drinks</option>
+        <option value="ndrinks">ndrinks</option>
+        <option value="salats">salats</option>
+        <option value="rolls">rolls</option>
+        <option value="nsushi">nsushi</option>
+        <option value="nsalats">nsalats</option>
+        <option value="ndecerts">ndecerts</option>
+        <option value="decerts">decerts</option>
+        <option value="nburgers">nburgers</option>
+      </select>
+    </div>
+    <div
+      class="fit_content"
+      [ngClass]="{
+        error:
+          form.get('img')?.invalid &&
+          (form.get('img')?.dirty || form.get('img')?.touched)
+      }"
+    >
+      <label>image : </label>
+      <input
+        type="text"
+        [placeholder]="currentProd?.img"
+        formControlName="img"
+      />
+    </div>
+
+    <button class="button" (click)="display()">Update</button>
+  </form>
+</div>

@@ -1,0 +1,52 @@
+<div class="container p-3">
+    <button class="button" (click)="goMain()">Main Page</button>
+  <div class="">
+    <form [formGroup]="createForm" class="form">
+      <div class="">
+        <label>Name:
+          <input type="text" class="px-2" formControlName="name" />
+        </label>
+      </div>
+      <div>
+        <label>Price:
+          <input type="text" class="px-2" formControlName="price" />
+        </label>
+      </div>
+      <div>
+        <label>Description:
+          <input type="text" class="px-2" formControlName="description" />
+        </label>
+      </div>
+      <div>
+        <label>amount:
+          <input type="text" class="px-2" formControlName="count" />
+        </label>
+      </div>
+      <div>
+        <label>image:
+          <input type="text" class="px-2" formControlName="img" />
+        </label>
+      </div>
+      <div>
+        <label>type:
+            <select formControlName="type">
+                <option value="nrolls">nrolls</option>
+                <option value="pizza">pizza</option>
+                <option value="sushi">sushi</option>
+                <option value="burgers2">burgers2</option>
+                <option value="drinks">drinks</option>
+                <option value="ndrinks">ndrinks</option>
+                <option value="salats">salats</option>
+                <option value="rolls">rolls</option>
+                <option value="nsushi">nsushi</option>
+                <option value="nsalats">nsalats</option>
+                <option value="ndecerts">ndecerts</option>
+                <option value="decerts">decerts</option>
+                <option value="nburgers">nburgers</option>
+            </select>
+        </label>
+      </div>
+      <button class="button" (click)="sendProduct()">Create</button>
+    </form>
+  </div>
+</div>

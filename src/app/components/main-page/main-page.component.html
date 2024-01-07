@@ -1,0 +1,22 @@
+<div class="container">
+  <app-tabs [controll]="tabFormControl" [tabs]="tabs"></app-tabs>
+  <app-tabs [controll]="tabFormControl" [tabs]="newTabs"></app-tabs>
+  <div class="py-3">
+    <button class="button" (click)="createProduct()">Create product</button>
+  </div>
+  <p *ngIf="loading; &quot;text-danger&quot;">Loading ...</p>
+  <div class="products">
+    <div *ngFor="let product of filteredProducts">
+      <div class="products-item">
+        <p class="deleteSing" (click)="deleteProduct(product._id)">Delete</p>
+        <p>{{ product.name }}</p>
+        <p>{{ product.price }}</p>
+        <p>{{ product._id }}</p>
+        <img [src]="product.img" alt="img" class="img" />
+        <div>
+          <button class="button" (click)="navigate(product._id)">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
